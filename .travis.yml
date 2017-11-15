@@ -3,8 +3,10 @@ sudo: false
 d:
   - dmd
 
-script:
-  - dub build -b release --compiler=${DC}
-
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
+deploy:
+  provider: releases
+  api_key: "ilBg77BjylbbkLrdZv69TxVNzHz4KYpsUBVnyX+FgkrzmqWp2RIIzUfGv30bQSNSTb+RWc+/XnCn/P6bcYZYFhDHq7ABk/bMx341VVidDvzIrzSwvdiLZxKVON8aSt1qq5Q2sGEv2MHDwSBe5zOkD9LHv+ZRoBHHgcX09MY2c9pki6y8v00EUi/mULWWZt3lqZyPKvHFumSa1UZmpkwi2YmFLxNIVCY/Du50IYh+n92d9BWcldqGZsyG1EcltiL93A9UWCF9rTZCZQyLRM3GjA8z7eiqg9adjGEPFJCuDYhQKEiMmBVGx8bR6FakWaXadoXokcu2DI4g33i+X+qzLsOAPG5r3j7sGjttxSQG4WIfRNQemuNm+0mAO4QpzVi6ZW8k0tQfZR6uwpO6buYJS3iapa3oia8zPK/gWFaLCRGJtKcYYSIRuB6APNAjTbekRBNMkNtkTLNvhyL68pXMOhIkEbJqgXtzl4/dd6SleqbA6tP+iyTPgKPbt9tZeBe3sZzapydTdcBONvltdWRKLrAYq7pnm4LPIs5TwYbxEC2egaoeI82I9A6cDyB1zHlCdLElnbhvwZrxY4HbPDRZR/n4ImYsX/4SSgoptj/GvcqJITEZAZtAqGpI0cayCJv1QBMamZt/7AAhfWCQgKCwu2KramvY2/bKwrlul48+Qvg="
+  file: "cpe"
+  skip_cleanup: true
+  on:
+    tags: true
